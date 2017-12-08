@@ -3,20 +3,11 @@ import { NgModule } from '@angular/core';
 
 //Application components...
 import { AppComponent } from './app.component';
-import {UserDataComponent} from './user-data.component';
-
-//Application pipes
-import {DeformUserEmailPipe} from './deform-user-email.pipe';
-
-//Application services
-import {UserDataService} from './user-data.service';
 
 @NgModule({
-	//These are the "public" pipes, components and directives.
+	//These are the "private" pipes, components and directives.
 	declarations: [
 		AppComponent,
-		UserDataComponent,
-		DeformUserEmailPipe
 	],
 	//These are the pieces of functionality needed for the module, private.
 	imports: [
@@ -26,9 +17,7 @@ import {UserDataService} from './user-data.service';
 				//working with lazy loading stuff...
 	],
 	//These are services... 
-	providers: [
-		UserDataService //This service declared here is accesible to all children components.
-	],
+	providers: [],
 	//This is the root component of this module. Given that AppComponent is
 	//bootstrapped, it is the "root module", as opposed to "feature module".
 	bootstrap: [AppComponent]
