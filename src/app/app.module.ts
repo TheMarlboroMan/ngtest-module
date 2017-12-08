@@ -12,13 +12,13 @@ import {DeformUserEmailPipe} from './deform-user-email.pipe';
 import {UserDataService} from './user-data.service';
 
 @NgModule({
-	//These are the "public" pipes, components and directives.
+	//These are the "private" pipes, components and directives.
 	declarations: [
 		AppComponent,
 		UserDataComponent,
 		DeformUserEmailPipe
 	],
-	//These are the pieces of functionality needed for the module, private.
+	//These are the pieces of functionality needed for the module, private too.
 	imports: [
 		BrowserModule	//This one is explicitly importing usual angular directives.
 				//Root modules import this one, while feature modules import
