@@ -1,0 +1,27 @@
+<h2>Change the user data here</h2>
+<!-- [V3] We add this # thing to reference the form itself with the userdataform variable so we can toggle the submit input-->
+<!-- [V3] As for ngSubmit, it refers to the submit of an angular governed form (reactive or template driven). -->
+<form #userdataform="ngForm" (ngSubmit)="send_data()">
+	<div>
+		<label>Name:
+<!--[V3] We add crap to the inputs too  -->
+<!--[V3] The "name" attribute is absolutely required -->
+<!--[V3] The "id" and "required", not so much ... -->
+<!--[V3] And the "ngModel", well, it is an attribute+event binding, bound to the model attribute "name". Required too, of course, so we can bind to the model -->
+<!--[V3] The #name variable refers to the particular form input, used later for validation...-->
+			<input type="text" name="name" id="name" #namefield="ngModel" required [(ngModel)]="get_model().name" />
+		</label>
+		<p *ngIf="!namefield.valid">This field is required!</p>
+	</div>
+	<div>
+<!--[V3] We also added email validation here... Yep, that's the "email" there.-->
+<!--[V3] Notice that we don't need to import validators, as it is the case with reactive forms -->
+		<label>Email:
+			<input type="text" name="email" id="email" #emailfield="ngModel" email required [(ngModel)]="get_model().email" />
+		</label>
+		<p *ngIf="!emailfield.valid">This field is required to be a valid email address!</p>
+	</div>
+	<div>
+		<input type="submit" value="Change user data" [disabled]="!userdataform.valid"/>
+	</div>
+</form>

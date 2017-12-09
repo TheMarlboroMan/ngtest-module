@@ -2,3 +2,5 @@
 Welcome to {{ title }}!
 </h1>
 <user-data></user-data>
+<!--[V3] Here we add the new component... we bind its output to a method of this component -->
+<user-data-update (on_saved)="user_data_saved($event)" ></user-data-update>

@@ -10,5 +10,11 @@ export class UserDataService {
 		email:"michaeljackson@mymail.com"
 	};
 
-	public get_user_data() {return this.user_data;}
+	public	get_user_data() {return this.user_data;}
+
+//[V3] New here is the update thing...
+	public	set_user_data(n:string, e:string):void{
+		this.user_data.name=n;
+		this.user_data.email=e;
+	}
 }

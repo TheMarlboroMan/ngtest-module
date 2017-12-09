@@ -12,9 +12,14 @@ export class UserDataComponent {
 	private name:string="";
 	private email:string="";
 
-	public constructor(uds:UserDataService){
+	public constructor(private uds:UserDataService){
 
-		const user_data=uds.get_user_data();
+		this.load_user_data();
+	}
+
+	public load_user_data() {
+
+		const user_data=this.uds.get_user_data();
 		this.name=user_data.name;
 		this.email=user_data.email;
 	}

@@ -3,9 +3,6 @@ import { NgModule } from '@angular/core';
 
 //Application components...
 import { AppComponent } from './app.component';
-
-//[V2] we removed old references to the new user-data module... Now we just
-//import the module here and will later declare it in the root module.
 import {UserDataModule} from '../user-data/user-data.module';
 
 @NgModule({
@@ -19,7 +16,8 @@ import {UserDataModule} from '../user-data/user-data.module';
 				//Root modules import this one, while feature modules import
 				//CommonModule. Failure to do so will bring failure when
 				//working with lazy loading stuff...
-		UserDataModule	//[V2] Here is our new module!! Things should work as before.
+		UserDataModule
+		//[V3] Notice how we don't actually add any of the module components...
 	],
 	//These are services... 
 	providers: [],
