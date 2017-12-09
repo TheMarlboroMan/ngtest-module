@@ -13,3 +13,6 @@ v8: Demonstrating different instances of the same service. Removed all contrapti
 v9: The very same functionality but with a shared module.
 v10: Functionality breaks when we use forRoot and register the service. We add a second service of which a single instance is needed... As a result, the original service becomes a singleton too.
 v11: We try to fix the previous problem, but end up with two separate services :D.
+master: The problem is fixed by rethinking the design (obviously).
+
+Just so I leave note of it: the VisitCounterService now has a map of string:number to count visit to different routes, provided by the router injected in each component. 

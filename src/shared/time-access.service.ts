@@ -6,7 +6,6 @@ export class TimeAccessService {
 	private	access_date:Date=null;
 
 	public	constructor() {
-		console.log("TimeAccessService is created");
 		this.access_date=new Date();
 	}
 
