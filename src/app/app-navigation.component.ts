@@ -1,4 +1,3 @@
-//[V5] New file, a navigation component...
 import {Component} from '@angular/core';
 
 @Component({

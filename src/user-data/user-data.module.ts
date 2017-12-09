@@ -9,7 +9,6 @@ import {FormsModule} from '@angular/forms';
 //We import the things we had imported in the app.module.ts file before...
 
 //Module components...
-//[V5] A new component that binds the other two...
 import {UserDataFullComponent} from './user-data-full.component';
 import {UserDataComponent} from './user-data.component';
 import {UserDataUpdateComponent} from './user-data-update.component';
@@ -27,7 +26,6 @@ import {DeformUserEmailPipe} from './deform-user-email.pipe';
 	declarations: [
 		UserDataComponent,
 		UserDataUpdateComponent,
-		//[V5] The new component goes here too...
 		UserDataFullComponent,
 		DeformUserEmailPipe,
 	],
@@ -44,7 +42,6 @@ import {DeformUserEmailPipe} from './deform-user-email.pipe';
 	exports: [
 		UserDataComponent,
 		UserDataUpdateComponent,
-		//[V5] The new component is exposed here...
 		UserDataFullComponent,
 	]
 })
