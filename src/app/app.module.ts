@@ -28,7 +28,7 @@ import {AppRouting} from './app.routing';
 		UserDataModule,
 		WelcomeModule,
 		AppRouting,
-		SharedModule,
+		SharedModule.forRoot()
 	],
 	//This is the root component of this module. Given that AppComponent is
 	//bootstrapped, it is the "root module", as opposed to "feature module".

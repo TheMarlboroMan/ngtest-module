@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 
 //This is a feature module, so we don't load BrowserModule but this one.
 import {CommonModule} from '@angular/common';
+import {SharedModule} from '../shared/shared.module';
 
 import {FormsModule} from '@angular/forms';
 
@@ -33,6 +34,7 @@ import {DeformUserEmailPipe} from './deform-user-email.pipe';
 	imports: [
 		CommonModule,
 		FormsModule,
+		SharedModule,
 	],
 	//And these are still services...
 	providers: [

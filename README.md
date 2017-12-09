@@ -11,3 +11,5 @@ v6: Added our first lazy module: "about".
 v7: A service in the lazy module using the "providers" array, preventing use in any other component outside of the module. Using services and components from a readily loaded module. Check the welcome.module.ts to see how trying to use a service from a lazily loaded module fails!!!
 v8: Demonstrating different instances of the same service. Removed all contraptions added before.
 v9: The very same functionality but with a shared module.
+v10: Functionality breaks when we use forRoot and register the service. We add a second service of which a single instance is needed... As a result, the original service becomes a singleton too.
+v11: We try to fix the previous problem, but end up with two separate services :D.

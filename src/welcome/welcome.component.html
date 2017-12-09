@@ -10,4 +10,7 @@ Integer feugiat hendrerit turpis id lobortis. Nunc volutpat leo vitae tincidunt 
 </p>
 </ng-container>
 
-<pre>This page has been visited {{vcs.get_visits()}} time(s)</pre>
+<pre>The service was first created at {{tas.get_date()}}</pre>
+<!-- [V11] We have now two instances: the one at the root and the one in the 
+lazily loaded module. Components in the root module share the same service -->
+<pre>This page (and user-data) has been visited {{vcs.get_visits()}} time(s)</pre>
