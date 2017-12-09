@@ -4,7 +4,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {AboutComponent} from './about.component';
 
 const routes=[
-	{path: 'about', component: AboutComponent}
+	{path: '', component: AboutComponent}
 ];
 
 export const ModuleRouting=RouterModule.forChild(routes);
