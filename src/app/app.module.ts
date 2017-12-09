@@ -5,8 +5,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {UserDataModule} from '../user-data/user-data.module';
 import {WelcomeModule} from '../welcome/welcome.module';
-//[V6] Our new module...
-import {AboutModule} from '../about/about.module';
+//[V6] We DON'T import the module!. We are trying to lazy load it!!!.
+//import {AboutModule} from '../about/about.module';
 import {AppRouting} from './app.routing';
 import {AppNavigationComponent} from './app-navigation.component';
 
@@ -25,8 +25,8 @@ import {AppNavigationComponent} from './app-navigation.component';
 		UserDataModule,
 		WelcomeModule,
 		AppRouting,
-		//[V6] New module...
-		AboutModule,
+		//[V6] Again, we don't do this... We try to lazy load!.
+		//AboutModule,
 	],
 	//These are services... 
 	providers: [],
