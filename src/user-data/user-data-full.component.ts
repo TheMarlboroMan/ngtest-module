@@ -4,8 +4,6 @@ import {Component} from '@angular/core';
 
 //[V5] No selector, we won't need it.
 @Component({
-	//TODO: REMOVE.
-	selector: 'user-data-full',
 	templateUrl: './user-data-full.component.html'
 })
 export class UserDataFullComponent {

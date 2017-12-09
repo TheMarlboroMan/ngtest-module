@@ -11,4 +11,4 @@ const app_routes=[
 	{path: 'user-data', component: UserDataFullComponent}
 ];
 
-export const AppRouting:ModuleWithProviders=RouterModule.forRoot(app_routes);
+export const AppRouting=RouterModule.forRoot(app_routes);
