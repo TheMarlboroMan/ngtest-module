@@ -43,8 +43,7 @@ import {DeformUserEmailPipe} from './deform-user-email.pipe';
 		UserDataComponent,
 		UserDataUpdateComponent,
 		UserDataFullComponent,
-		//[V7] We add the pipe to exports so other modules can use it....
-		DeformUserEmailPipe,
+		//[V8] Removed the whole pipe ordeal.
 	]
 })
 //The class is, of course, empty.

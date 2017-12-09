@@ -9,3 +9,4 @@ v4: Change the contrived mechanism to a service with observes: much smaller.
 v5: Added the router and a new feature module "Welcome".
 v6: Added our first lazy module: "about".
 v7: A service in the lazy module using the "providers" array, preventing use in any other component outside of the module. Using services and components from a readily loaded module. Check the welcome.module.ts to see how trying to use a service from a lazily loaded module fails!!!
+v8: Demonstrating different instances of the same service. Removed all contraptions added before.

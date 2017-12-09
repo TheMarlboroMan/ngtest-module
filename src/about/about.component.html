@@ -3,17 +3,5 @@
 <p>
 This is just yet another Angular4 test. What did you expect to see here?
 </p>
-<p>
-Just in case you doubted it, this lazily loaded component (in a lazily loaded module)
-can readily access services of the another module: <b>{{uds.get_user_data().name}}.</b>
-</p>
-<p>
-The same CAN NOT be said about pipes. To get this pipe to work 
-we had to import the FULL UserDataModule <b>{{uds.get_user_data().email | deformUserEmail}}</b>
-</p>
-<p>Also, we are able to use a full component in the template, at the price 
-of importing the full module.
-</p>
-<user-data></user-data>
 
 <pre>This page has been visited {{vcs.get_visits()}} time(s)</pre>
