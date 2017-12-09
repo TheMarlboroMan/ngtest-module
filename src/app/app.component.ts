@@ -1,4 +1,3 @@
-//[V4] we clear view child and userdatacomponent stuff...
 import { Component } from '@angular/core';
 
 @Component({
@@ -9,6 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
 	public title = 'module hell!';
-
-	//[V4] We also clear the listener...
 }

@@ -1,4 +1,3 @@
-//[V4] We remove the event emitter and output stuff...
 import {Component} from '@angular/core';
 
 import {UserDataService} from './user-data.service';
@@ -20,7 +19,6 @@ class UserDataModel{
 })
 export class UserDataUpdateComponent{
 
-	//[V4] Remove the emitter...
 	private	data_model:UserDataModel=null;
 
 	public	constructor(private uds:UserDataService){
@@ -31,9 +29,6 @@ export class UserDataUpdateComponent{
 
 	public	get_model():UserDataModel {return this.data_model;}
 
-	//[V4] We just use the service: it will emit something that the 
-	//UserDataComponent will listen to.
-	//since it's bound to the model we already have.
 	public	send_data() {
 		this.uds.set_user_data(this.data_model.name, this.data_model.email);
 	}
