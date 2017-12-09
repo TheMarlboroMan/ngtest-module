@@ -1,13 +1,13 @@
 import {Component} from '@angular/core';
 
-import {VisitCounterService} from './visit-counter.service';
+//[V9] Let the compiler know...
+import {VisitCounterService} from '../shared/visit-counter.service';
 
 @Component({
 	templateUrl: 'about.component.html'
 })
 export class AboutComponent {
 
-	//[V8] Removed user data service...
 	public	constructor(public vcs:VisitCounterService) {
 		vcs.add_visit();
 	}

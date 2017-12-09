@@ -1,15 +1,14 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {WelcomeComponent} from './welcome.component';
-
-//[V8] Preparing to use the service...
-import {VisitCounterService} from '../about/visit-counter.service';
+//[V9] Importing the new shared module...
+import {SharedModule} from '../shared/shared.module';
 
 @NgModule({
-	imports: [CommonModule],
+	//[V9] We import it...
+	imports: [CommonModule, SharedModule],
 	exports: [WelcomeComponent],
-	//[V8] Get a new copy of the service...
-	providers: [VisitCounterService],
+	providers: [],
 	declarations: [WelcomeComponent]
 })
 export class WelcomeModule {

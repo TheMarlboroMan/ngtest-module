@@ -1,12 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-//Application components...
-import { AppComponent } from './app.component';
+//Custom modules
 import {UserDataModule} from '../user-data/user-data.module';
 import {WelcomeModule} from '../welcome/welcome.module';
-import {AppRouting} from './app.routing';
+//[V9] Here it is...
+import {SharedModule} from '../shared/shared.module';
+
+//Application components...
+import { AppComponent } from './app.component';
 import {AppNavigationComponent} from './app-navigation.component';
+
+//Routing...
+import {AppRouting} from './app.routing';
 
 @NgModule({
 	//These are the "private" pipes, components and directives.
@@ -23,9 +29,9 @@ import {AppNavigationComponent} from './app-navigation.component';
 		UserDataModule,
 		WelcomeModule,
 		AppRouting,
+		SharedModule			//[V9] The new shared module...
 	],
-	//These are services... 
-	providers: [],
+	//[V9] Removing empty keys...
 	//This is the root component of this module. Given that AppComponent is
 	//bootstrapped, it is the "root module", as opposed to "feature module".
 	bootstrap: [AppComponent]

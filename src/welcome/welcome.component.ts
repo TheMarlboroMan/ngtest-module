@@ -1,13 +1,13 @@
 import {Component} from '@angular/core';
-//[V8] Import the service...
-import {VisitCounterService} from '../about/visit-counter.service';
+
+//[V9] The module is imported, providing the service. We just let the compiler know about it...
+import {VisitCounterService} from '../shared/visit-counter.service';
 
 @Component({
 	templateUrl: './welcome.component.html'
 })
 export class WelcomeComponent {
 
-	//[V8] And use it...
 	public	constructor(public vcs:VisitCounterService){
 		vcs.add_visit();
 	}
