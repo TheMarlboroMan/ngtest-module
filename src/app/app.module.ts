@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 //Custom modules
 import {UserDataModule} from '../user-data/user-data.module';
 import {WelcomeModule} from '../welcome/welcome.module';
-//[V9] Here it is...
 import {SharedModule} from '../shared/shared.module';
 
 //Application components...
@@ -29,9 +28,8 @@ import {AppRouting} from './app.routing';
 		UserDataModule,
 		WelcomeModule,
 		AppRouting,
-		SharedModule			//[V9] The new shared module...
+		SharedModule,
 	],
-	//[V9] Removing empty keys...
 	//This is the root component of this module. Given that AppComponent is
 	//bootstrapped, it is the "root module", as opposed to "feature module".
 	bootstrap: [AppComponent]

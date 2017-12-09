@@ -1,6 +1,4 @@
 import {Component} from '@angular/core';
-
-//[V9] Let the compiler know...
 import {VisitCounterService} from '../shared/visit-counter.service';
 
 @Component({
