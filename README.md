@@ -10,3 +10,5 @@ v2:
 
 v3:
 	Added a second service to update the user data, still in the user-data module, reviewing easy template driven stuff. Also communicating two components with a contrived mechanism...
+
+v4:	Change the contrived mechanism to a service with observes: much smaller.

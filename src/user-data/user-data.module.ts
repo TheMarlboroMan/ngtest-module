@@ -3,13 +3,11 @@ import {NgModule} from '@angular/core';
 //This is a feature module, so we don't load BrowserModule but this one.
 import {CommonModule} from '@angular/common';
 
-//[V3] Because we are going to have a template form, we need this...
 import {FormsModule} from '@angular/forms';
 
 //We import the things we had imported in the app.module.ts file before...
 
 //Module components...
-//[V3] we fix the paths and add the new component...
 import {UserDataComponent} from './user-data.component';
 import {UserDataUpdateComponent} from './user-data-update.component';
 
@@ -25,14 +23,12 @@ import {DeformUserEmailPipe} from './deform-user-email.pipe';
 	//Remember, these are the private parts
 	declarations: [
 		UserDataComponent,
-		//[V3] We import the new component now and expose it in "exports".
 		UserDataUpdateComponent,
 		DeformUserEmailPipe,
 	],
 	//These are the inner working ones...
 	imports: [
 		CommonModule,
-		//[V3] The form thing is here too...
 		FormsModule,
 	],
 	//And these are still services...
@@ -42,7 +38,6 @@ import {DeformUserEmailPipe} from './deform-user-email.pipe';
 	//This one is new!!!, it is the public stuff it exposes.
 	exports: [
 		UserDataComponent,
-		//[V3] We need to expose the new component so it is visible outside this module.
 		UserDataUpdateComponent,
 	]
 })
