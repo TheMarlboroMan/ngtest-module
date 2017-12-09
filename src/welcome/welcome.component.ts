@@ -4,5 +4,6 @@ import {Component} from '@angular/core';
 	templateUrl: './welcome.component.html'
 })
 export class WelcomeComponent {
+
 	public show_lorem_ipsum:boolean=true;
 }

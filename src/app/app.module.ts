@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {UserDataModule} from '../user-data/user-data.module';
 import {WelcomeModule} from '../welcome/welcome.module';
+//[V6] Our new module...
+import {AboutModule} from '../about/about.module';
 import {AppRouting} from './app.routing';
 import {AppNavigationComponent} from './app-navigation.component';
 
@@ -23,6 +25,8 @@ import {AppNavigationComponent} from './app-navigation.component';
 		UserDataModule,
 		WelcomeModule,
 		AppRouting,
+		//[V6] New module...
+		AboutModule,
 	],
 	//These are services... 
 	providers: [],
