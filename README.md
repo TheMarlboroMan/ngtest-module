@@ -13,6 +13,17 @@ v8: Demonstrating different instances of the same service. Removed all contrapti
 v9: The very same functionality but with a shared module.
 v10: Functionality breaks when we use forRoot and register the service. We add a second service of which a single instance is needed... As a result, the original service becomes a singleton too.
 v11: We try to fix the previous problem, but end up with two separate services :D.
-master: The problem is fixed by rethinking the design (obviously).
+master: The problem is fixed by rethinking the design (obviously). Also, the welcome module is lazily loaded, for fun and practice.
 
-Just so I leave note of it: the VisitCounterService now has a map of string:number to count visit to different routes, provided by the router injected in each component. 
+Just so I leave note of it: the VisitCounterService now has a map of string:number to count visit to different routes, provided by the router injected in each component.
+
+A few notes on lazy loading a module...
+
+	- Create the routing file of the module
+		- import RouterModule and Router (js)
+		- import the needed components (js)
+		- create the paths, leave the default blank!
+		- export a declared object of RouterModule.forChild (js)
+	- Import this file in the file of the module, add it to both js's imports and the module imports.
+	- Remove the route from the app routing: delete the js imports refering to the module and use loadChildren in the route.
+	- Remove all imports referring to the module in app.module, as they are redundant (both js and angular)
