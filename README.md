@@ -18,7 +18,9 @@ master-plus:
 	- The welcome module is lazily loaded, for fun and practice.
 	- A new "dance" module is done. One component is exported and the other is not. The exported component is shown in user-data.
 		- This is done to shed a bit of light on the difference between "exports" (redeclares to anyone importing) and "declares" (declares these pieces belong in this module).
-	- 
+	- A new "core" module is done. This has "include" guards so it shall be loaded only once. The service CurrentUserService (manipulated in AppComponent) is provided through "providers" but since we can't import the module twice, everybody shares the instance.
+	- A "UselessService" is added through "providers" to the "shared" module and subjected to some manipulation in AppComponent. Lazy loaded modules do not display the alterations.
+	- We deviate from "do not add services to SharedModule" on purpose, of course.
 
 - A few notes on creating a new module.
 	- Create the module file (dance/dance.module.ts).

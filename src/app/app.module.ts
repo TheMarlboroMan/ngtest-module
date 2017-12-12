@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import {UserDataModule} from '../user-data/user-data.module';
 import {DanceModule} from '../dance/dance.module';
 import {SharedModule} from '../shared/shared.module';
+import {CoreModule} from '../core/core.module';
 
 //Application components...
 import { AppComponent } from './app.component';
@@ -28,6 +29,7 @@ import {AppRouting} from './app.routing';
 		UserDataModule,
 		DanceModule,
 		AppRouting,
+		CoreModule,
 		SharedModule.forRoot()
 	],
 	//This is the root component of this module. Given that AppComponent is
