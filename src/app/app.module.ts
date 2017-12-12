@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 //Custom modules
 import {UserDataModule} from '../user-data/user-data.module';
+import {DanceModule} from '../dance/dance.module';
 import {SharedModule} from '../shared/shared.module';
 
 //Application components...
@@ -25,6 +26,7 @@ import {AppRouting} from './app.routing';
 				//CommonModule. Failure to do so will bring failure when
 				//working with lazy loading stuff...
 		UserDataModule,
+		DanceModule,
 		AppRouting,
 		SharedModule.forRoot()
 	],

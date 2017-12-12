@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 //This is a feature module, so we don't load BrowserModule but this one.
 import {CommonModule} from '@angular/common';
 import {SharedModule} from '../shared/shared.module';
+import {DanceModule} from '../dance/dance.module';
 
 import {FormsModule} from '@angular/forms';
 
@@ -20,10 +21,11 @@ import {UserDataService} from './user-data.service';
 //Module pipes...
 import {DeformUserEmailPipe} from './deform-user-email.pipe';
 
+
 //Here we really create the new module... We can mostly do it as we did it before
 //and remove the things that were in the app.module.ts. file.
 @NgModule({
-	//Remember, these are the private parts
+	//Remember, these are the private parts that BELONG here.
 	declarations: [
 		UserDataComponent,
 		UserDataUpdateComponent,
@@ -35,6 +37,7 @@ import {DeformUserEmailPipe} from './deform-user-email.pipe';
 		CommonModule,
 		FormsModule,
 		SharedModule,
+		DanceModule
 	],
 	//And these are still services...
 	providers: [
@@ -42,9 +45,6 @@ import {DeformUserEmailPipe} from './deform-user-email.pipe';
 	],
 	//This one is new!!!, it is the public stuff it exposes.
 	exports: [
-		UserDataComponent,
-		UserDataUpdateComponent,
-		UserDataFullComponent,
 	]
 })
 //The class is, of course, empty.

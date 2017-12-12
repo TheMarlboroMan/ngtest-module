@@ -13,12 +13,24 @@ v8: Demonstrating different instances of the same service. Removed all contrapti
 v9: The very same functionality but with a shared module.
 v10: Functionality breaks when we use forRoot and register the service. We add a second service of which a single instance is needed... As a result, the original service becomes a singleton too.
 v11: We try to fix the previous problem, but end up with two separate services :D.
-master: The problem is fixed by rethinking the design (obviously). Also, the welcome module is lazily loaded, for fun and practice.
+master: The problem is fixed by rethinking the design (obviously). Just so I leave note of it: the VisitCounterService now has a map of string:number to count visit to different routes, provided by the router injected in each component.
+master-plus:
+	- The welcome module is lazily loaded, for fun and practice.
+	- A new "dance" module is done. One component is exported and the other is not. The exported component is shown in user-data.
+		- This is done to shed a bit of light on the difference between "exports" (redeclares to anyone importing) and "declares" (declares these pieces belong in this module).
+	- 
 
-Just so I leave note of it: the VisitCounterService now has a map of string:number to count visit to different routes, provided by the router injected in each component.
+- A few notes on creating a new module.
+	- Create the module file (dance/dance.module.ts).
+		- Import NgModule from core, but also CommonModule from common (js)
+		- Import components that will be there (js)
+		- import (angular) CommonModule.
+		- declare (angular) components.
+		- If you are going to use components of this module OUTSIDE the module, export them (angular).
+	- Create the component files and template files.
+	- Import (both js and angular) the module in app.module.ts
 
-A few notes on lazy loading a module...
-
+- A few notes on lazy loading an existing module...
 	- Create the routing file of the module
 		- import RouterModule and Router (js)
 		- import the needed components (js)
@@ -26,4 +38,4 @@ A few notes on lazy loading a module...
 		- export a declared object of RouterModule.forChild (js)
 	- Import this file in the file of the module, add it to both js's imports and the module imports.
 	- Remove the route from the app routing: delete the js imports refering to the module and use loadChildren in the route.
-	- Remove all imports referring to the module in app.module, as they are redundant (both js and angular)
+	- Remove all imports referring to the module in app.module, as they are redundant (both js and angular).

@@ -6,7 +6,6 @@ import {ModuleRouting} from './welcome.routing';
 
 @NgModule({
 	imports: [CommonModule, SharedModule, ModuleRouting],
-	exports: [WelcomeComponent],
 	declarations: [WelcomeComponent]
 })
 export class WelcomeModule {
