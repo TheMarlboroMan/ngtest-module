@@ -21,6 +21,17 @@ master-plus:
 	- A new "core" module is done. This has "include" guards so it shall be loaded only once. The service CurrentUserService (manipulated in AppComponent) is provided through "providers" but since we can't import the module twice, everybody shares the instance.
 	- A "UselessService" is added through "providers" to the "shared" module and subjected to some manipulation in AppComponent. Lazy loaded modules do not display the alterations.
 	- We deviate from "do not add services to SharedModule" on purpose, of course.
+master-plus-v2:
+	- Reorganising files so everything is under app/
+	- Using the CoreModule to provide only services, moving the services from SharedModule (thus rendering all previous experiments moot).
+	- TODO: Using the SharedModule to provide common components, directives, and pipes, including exporting angular ones, reducing js imports.
+		- Add pipes here.
+		- Add the dancing banana component here.
+		- Add common angular shit.
+		- Remove common angular shit imported.
+		- Clean up imports.
+	- TODO: Give an example of a particular PIPE creating the "DANCE" pipe (intercalate the word "dance").
+
 
 - A few notes on creating a new module.
 	- Create the module file (dance/dance.module.ts).
@@ -39,5 +50,5 @@ master-plus:
 		- create the paths, leave the default blank!
 		- export a declared object of RouterModule.forChild (js)
 	- Import this file in the file of the module, add it to both js's imports and the module imports.
-	- Remove the route from the app routing: delete the js imports refering to the module and use loadChildren in the route.
+	- Remove the route from the app routing: delete the js imports refering to the module and use loadChildren in the route. Paths in loadChildren are relative.
 	- Remove all imports referring to the module in app.module, as they are redundant (both js and angular).
