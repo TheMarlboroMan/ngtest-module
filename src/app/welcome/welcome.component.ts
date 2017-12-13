@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
-import {VisitCounterService} from '../shared/visit-counter.service';
-import {TimeAccessService} from '../shared/time-access.service';
+import {VisitCounterService} from '../core/visit-counter.service';
+import {TimeAccessService} from '../core/time-access.service';
 import {CurrentUserService} from '../core/current-user.service';
-import {UselessService} from '../shared/useless.service';
+import {UselessService} from '../core/useless.service';
 
 @Component({
 	templateUrl: './welcome.component.html'

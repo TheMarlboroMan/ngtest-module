@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 //Custom modules
-import {UserDataModule} from '../user-data/user-data.module';
-import {DanceModule} from '../dance/dance.module';
-import {SharedModule} from '../shared/shared.module';
-import {CoreModule} from '../core/core.module';
+import {UserDataModule} from './user-data/user-data.module';
+import {DanceModule} from './dance/dance.module';
+import {SharedModule} from './shared/shared.module';
+import {CoreModule} from './core/core.module';
 
 //Application components...
 import { AppComponent } from './app.component';
@@ -29,8 +29,8 @@ import {AppRouting} from './app.routing';
 		UserDataModule,
 		DanceModule,
 		AppRouting,
-		CoreModule,
-		SharedModule.forRoot()
+		CoreModule.forRoot(),
+		SharedModule
 	],
 	//This is the root component of this module. Given that AppComponent is
 	//bootstrapped, it is the "root module", as opposed to "feature module".

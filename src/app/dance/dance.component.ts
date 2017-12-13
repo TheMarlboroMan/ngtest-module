@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 import {CurrentUserService} from '../core/current-user.service';
-import {UselessService} from '../shared/useless.service';
+import {UselessService} from '../core/useless.service';
 
 @Component({
 	selector : 'dance',

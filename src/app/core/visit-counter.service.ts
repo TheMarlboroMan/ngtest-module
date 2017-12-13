@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class VisitCounterService{
 
-	private	current_key:string=null;	
+	private	current_key:string=null;
 	private	visits={};
 	
 	public	visit(key:string) {

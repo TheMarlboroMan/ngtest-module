@@ -1,14 +1,16 @@
 import {Routes, RouterModule} from '@angular/router';
 
 //The components we are going to route...
-import {UserDataFullComponent} from '../user-data/user-data-full.component';
-import {DanceComponent} from '../dance/dance.component';
+import {UserDataFullComponent} from './user-data/user-data-full.component';
+import {DanceComponent} from './dance/dance.component';
+
+//TODO: Check again...
 
 const routes=[
 	{path: '', redirectTo: 'user-data', pathMatch:'full'},
-	{path: 'welcome', loadChildren: 'welcome/welcome.module#WelcomeModule'},
+	{path: 'welcome', loadChildren: './welcome/welcome.module#WelcomeModule'},
 	{path: 'user-data', component: UserDataFullComponent},
-	{path: 'about', loadChildren: 'about/about.module#AboutModule'},
+	{path: 'about', loadChildren: './about/about.module#AboutModule'},
 	{path: 'dance', component: DanceComponent}
 ];
 
