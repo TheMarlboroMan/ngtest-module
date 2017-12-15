@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 //Custom modules
@@ -26,11 +27,12 @@ import {AppRouting} from './app.routing';
 				//Root modules import this one, while feature modules import
 				//CommonModule. Failure to do so will bring failure when
 				//working with lazy loading stuff...
+		BrowserAnimationsModule,
 		UserDataModule,
 		DanceModule,
-		AppRouting,
 		CoreModule.forRoot(),
-		SharedModule
+		SharedModule,
+		AppRouting
 	],
 	//This is the root component of this module. Given that AppComponent is
 	//bootstrapped, it is the "root module", as opposed to "feature module".

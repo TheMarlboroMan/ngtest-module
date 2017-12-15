@@ -24,14 +24,14 @@ master-plus:
 master-plus-v2:
 	- Reorganising files so everything is under app/
 	- Using the CoreModule to provide only services, moving the services from SharedModule (thus rendering all previous experiments moot).
-	- TODO: Using the SharedModule to provide common components, directives, and pipes, including exporting angular ones, reducing js imports.
-		- Add pipes here.
-		- Add the dancing banana component here.
-		- Add common angular shit.
-		- Remove common angular shit imported.
-		- Clean up imports.
-	- TODO: Give an example of a particular PIPE creating the "DANCE" pipe (intercalate the word "dance").
+	- Using the SharedModule to provide common components, directives, and pipes, including exporting angular ones, reducing js imports.
+master-plus-v3:
+	- First foray into animations... entry of "Welcome" is animated. Leave does not work...
 
+I would do a master-plus-vX with things like injectors and useValue, non class services (dependencies) but I can't for the life of me figure out what kind of problem are these two supposed to solve in such an opinionated framework.
+
+- Interesting note about the shared module
+	- You can import it (js) until you are bored, but nothing will be visible in any component unless you import (ng) the shared module into the client module itself.
 
 - A few notes on creating a new module.
 	- Create the module file (dance/dance.module.ts).

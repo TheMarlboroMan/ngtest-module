@@ -1,14 +1,22 @@
-import {Component} from '@angular/core';
+import {Component, HostBinding} from '@angular/core';
 import {Router} from '@angular/router';
+
 import {VisitCounterService} from '../core/visit-counter.service';
 import {TimeAccessService} from '../core/time-access.service';
 import {CurrentUserService} from '../core/current-user.service';
 import {UselessService} from '../core/useless.service';
 
+import {WelcomeAnimation} from './animations';
+
 @Component({
-	templateUrl: './welcome.component.html'
+	templateUrl: './welcome.component.html',
+	animations:[WelcomeAnimation]
 })
 export class WelcomeComponent {
+
+	@HostBinding('@animationcomponenttrigger') animationcomponenttrigger=true;
+	@HostBinding('style.display') display='block';
+	@HostBinding('style.position') position='absolute';
 
 	public	constructor(
 			public vcs:VisitCounterService,
