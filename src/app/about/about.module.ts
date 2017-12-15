@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {AboutComponent} from './about.component';
-import {ModuleRouting} from './about.routing';
 import {SharedModule} from '../shared/shared.module';
 
+import {AboutComponent} from './about.component';
+import {ModuleRouting} from './about.routing';
+
 @NgModule({
-	imports: [CommonModule, ModuleRouting, SharedModule],
+	imports: [ModuleRouting, SharedModule],
 	declarations: [AboutComponent],
 
 })
