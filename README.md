@@ -27,7 +27,7 @@ master-plus-v2:
 	- Using the SharedModule to provide common components, directives, and pipes, including exporting angular ones, reducing js imports.
 master-plus-v3:
 	- First foray into animations... entry of "Welcome" is animated. Leave does not work: I guess the router removes the component before it can be animated.
-	- Added a list of elements into the dance components. Animated according to state, depicting possibilities with default css properties and explicit animation states. Leaving DOES work.
+	- Added a list of elements into the dance components. Animated according to state, depicting possibilities with default css properties and explicit animation states.
 
 I would do a master-plus-vX with things like injectors and useValue, non class services (dependencies) but I can't for the life of me figure out what kind of problem are these two supposed to solve in such an opinionated framework.
 
@@ -65,7 +65,8 @@ I would do a master-plus-vX with things like injectors and useValue, non class s
 	- This other thing
 		transition('* => void', [style({color:'#fff'}), animate('0.5s ease', style({transform: 'translateX(100%)'}))])
 			reades: When I exit, apply me the style with white color, then animate me to the translateX style in 0.5s.
-	- The trick on pinning animations to items is to combine the trigger with the state, like in [@getoutitem]="present" in the style.
+	- Animations are pinned to elements through templating. [@triggername]="statename".
+	- The trick on pinning :enter or :leave animations is to combine the trigger name with the state, like in [@getoutitem]="present".
 
 export const HoverItem:AnimationEntryMetadata=trigger('hoveritem', [
 	state('hovered', style({backgroundColor: '#c55'})),
