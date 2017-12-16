@@ -1,0 +1,9 @@
+<h4>This is an item in the list</h4>
+
+<p *ngIf="!current">
+Loading guitar data...
+</p>
+<p *ngIf="current">
+The {{current.model}} built by {{current.brand}} has the id {{current.id}}.
+</p>
+

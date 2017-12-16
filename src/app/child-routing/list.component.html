@@ -1,0 +1,11 @@
+<h3>This is the list component...</h3>
+
+<p>You can click on each link to get to yet another nested route.</p>
+
+<ul>
+	<li *ngFor="let guitar of guitars" >
+		<a routerLink="{{guitar.id}}">{{guitar.brand}} {{guitar.model}}</a>
+	</li>
+</ul>
+
+<router-outlet></router-outlet>

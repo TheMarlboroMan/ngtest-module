@@ -4,8 +4,6 @@ import {Routes, RouterModule} from '@angular/router';
 import {UserDataFullComponent} from './user-data/user-data-full.component';
 import {DanceComponent} from './dance/dance.component';
 
-//TODO: Check again...
-
 const routes=[
 	{path: '', redirectTo: 'user-data', pathMatch:'full'},
 	{path: 'welcome', loadChildren: './welcome/welcome.module#WelcomeModule'},

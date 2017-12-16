@@ -1,9 +1,8 @@
 <h2>Child routing...</h2>
 <nav>
-<!-- TODO: This shit is not working...
-	<a routerLinkActive="current" routerLink="child-routing" >Back to base</a>
--->
+	<a routerLinkActive="current" routerLink="./" [routerLinkActiveOptions]="{exact:true}" >Back to base</a>
 	<a routerLinkActive="current" routerLink="picture" >See a picture</a>
 	<a routerLinkActive="current" routerLink="video" >Watch a video</a>
+	<a routerLinkActive="current" routerLink="list" >Browse a list</a>
 </nav>
 <router-outlet></router-outlet>
