@@ -7,3 +7,17 @@
 This is dance component!!... It is not exported, so you can't use it outside its module.
 </p>
 <dance-banana></dance-banana>
+<div>
+	<input *ngIf="animated_items.length < 3" type="button" value="Add thing" (click)="add_animated_item()" />
+	<p *ngIf="animated_items.length >= 3">Too many items... remove some.</p>
+	<div class="container">
+		<div *ngFor="let val of animated_items; let i=index;" 
+			(mouseover)="val.hover=true;" 
+			(mouseout)="val.hover=false;"
+			[@hoveritem]="val.hover ? 'hovered' : 'unhovered'"
+		>
+			{{val.hover}} : {{val.content}}
+			<input type="button" value="Remove me" (click)="remove_item(i)" />
+		</div>
+	</div>
+</div>

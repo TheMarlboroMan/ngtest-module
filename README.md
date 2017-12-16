@@ -27,6 +27,7 @@ master-plus-v2:
 	- Using the SharedModule to provide common components, directives, and pipes, including exporting angular ones, reducing js imports.
 master-plus-v3:
 	- First foray into animations... entry of "Welcome" is animated. Leave does not work...
+	- Added a list of elements into the dance components. Animated according to state, depicting possibilities with default css properties and explicit animation states.
 
 I would do a master-plus-vX with things like injectors and useValue, non class services (dependencies) but I can't for the life of me figure out what kind of problem are these two supposed to solve in such an opinionated framework.
 
