@@ -15,8 +15,8 @@ import {WelcomeAnimation} from './animations';
 export class WelcomeComponent {
 
 	@HostBinding('@animationcomponenttrigger') animationcomponenttrigger=true;
-	@HostBinding('style.display') display='block';
 	@HostBinding('style.position') position='absolute';
+	@HostBinding('style.display') display='block';
 
 	public	constructor(
 			public vcs:VisitCounterService,

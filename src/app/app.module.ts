@@ -9,7 +9,7 @@ import {SharedModule} from './shared/shared.module';
 import {CoreModule} from './core/core.module';
 
 //Application components...
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {AppNavigationComponent} from './app-navigation.component';
 
 //Routing...

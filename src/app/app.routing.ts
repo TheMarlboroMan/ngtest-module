@@ -11,6 +11,7 @@ const routes=[
 	{path: 'welcome', loadChildren: './welcome/welcome.module#WelcomeModule'},
 	{path: 'user-data', component: UserDataFullComponent},
 	{path: 'about', loadChildren: './about/about.module#AboutModule'},
+	{path: 'child-routing', loadChildren: './child-routing/child-routing.module#ChildRoutingModule'},
 	{path: 'dance', component: DanceComponent}
 ];
 

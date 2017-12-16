@@ -26,8 +26,11 @@ master-plus-v2:
 	- Using the CoreModule to provide only services, moving the services from SharedModule (thus rendering all previous experiments moot).
 	- Using the SharedModule to provide common components, directives, and pipes, including exporting angular ones, reducing js imports.
 master-plus-v3:
-	- First foray into animations... entry of "Welcome" is animated. Leave does not work: I guess the router removes the component before it can be animated.
+	- First foray into animations... entry of "Welcome" is animated. Leave does not work unless you change to another animated component, of which there is currently none.
 	- Added a list of elements into the dance components. Animated according to state, depicting possibilities with default css properties and explicit animation states.
+master-plus-v4:
+	- Added another animated element so you can switch between welcome and dance and experience animations.
+	- First forays into nested routing.
 
 I would do a master-plus-vX with things like injectors and useValue, non class services (dependencies) but I can't for the life of me figure out what kind of problem are these two supposed to solve in such an opinionated framework.
 

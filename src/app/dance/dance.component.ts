@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, HostBinding} from '@angular/core';
 
 import {CurrentUserService} from '../core/current-user.service';
 import {UselessService} from '../core/useless.service';
-import {HoverItem, HoverItemFont, ItemLeave} from './animations';
+import {HoverItem, HoverItemFont, ItemLeave, DanceAnimation} from './animations';
 
 class Item {
 	public	constructor(val:string) {this.content=val;}
@@ -14,9 +14,13 @@ class Item {
 	selector : 'dance',
 	templateUrl: 'dance.component.html',
 	styleUrls: ['dance.component.css'],
-	animations: [HoverItem, HoverItemFont, ItemLeave]
+	animations: [HoverItem, HoverItemFont, ItemLeave, DanceAnimation]
 })
 export class DanceComponent {
+
+	@HostBinding('@animationcomponenttrigger') animationcomponenttrigger=true;
+	@HostBinding('style.position') position='absolute';
+	@HostBinding('style.display') display='block';
 
 	public	animated_items:Item[]=[];
 
