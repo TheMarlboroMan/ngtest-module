@@ -1,5 +1,10 @@
 import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/fromPromise';
+import 'rxjs/add/operator/delay';
 import {GuitarModel} from './guitar.model';
+
 
 const guitars:GuitarModel[]=[
 		new GuitarModel(1, "Schecter", "007 Elite"),
@@ -16,22 +21,21 @@ const guitars:GuitarModel[]=[
 @Injectable()
 export class GuitarService {
 
+
 	public	get_guitars():Promise<GuitarModel[]> {
 
-//TODO		function crap(value:any) {
-//			function c(cb:any) {setTimeout( () => {cb(value);}, 2000);};
-//			return new Promise(c);
-//		}
-
-		return new Promise<GuitarModel[]>( () => guitars)
-			.then( (data) => {
-				console.log(data);
-				return data;})
+		//Much more terse.
+		return Observable.of(guitars).delay(1000).toPromise();
 	}
 
 	public	get_guitar(id:number):Promise<GuitarModel> {
 
-		return new Promise( () => guitars)
-			.then( (data) => {return data[0];});
+		//TODO: How do we guard against invalid ids????
+
+		let prom=Promise.resolve(guitars)
+			.then( (data) => data.filter( (val) => {return val.id==id;}))
+			.then( (data) => {if(data.length) return data[0]; else return null;})
+
+		return Observable.fromPromise(prom).delay(1000).toPromise();
 	}
 }

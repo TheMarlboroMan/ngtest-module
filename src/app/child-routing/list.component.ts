@@ -14,9 +14,6 @@ export class ListComponent implements OnInit {
 	}
 
 	public	ngOnInit():void {
-
-		this.gs.get_guitars().then( (data) => {
-			this.guitars=data;
-		});
+		this.gs.get_guitars().then( (data) => {this.guitars=data;});
 	}
 }

@@ -2,7 +2,9 @@
 
 <p>You can click on each link to get to yet another nested route.</p>
 
-<ul>
+
+<p *ngIf="!guitars.length">Loading ... </p>
+<ul *ngIf="guitars.length">
 	<li *ngFor="let guitar of guitars" >
 		<a routerLink="{{guitar.id}}">{{guitar.brand}} {{guitar.model}}</a>
 	</li>
