@@ -26,8 +26,8 @@ master-plus-v2:
 	- Using the CoreModule to provide only services, moving the services from SharedModule (thus rendering all previous experiments moot).
 	- Using the SharedModule to provide common components, directives, and pipes, including exporting angular ones, reducing js imports.
 master-plus-v3:
-	- First foray into animations... entry of "Welcome" is animated. Leave does not work...
-	- Added a list of elements into the dance components. Animated according to state, depicting possibilities with default css properties and explicit animation states.
+	- First foray into animations... entry of "Welcome" is animated. Leave does not work: I guess the router removes the component before it can be animated.
+	- Added a list of elements into the dance components. Animated according to state, depicting possibilities with default css properties and explicit animation states. Leaving DOES work.
 
 I would do a master-plus-vX with things like injectors and useValue, non class services (dependencies) but I can't for the life of me figure out what kind of problem are these two supposed to solve in such an opinionated framework.
 
@@ -53,3 +53,21 @@ I would do a master-plus-vX with things like injectors and useValue, non class s
 	- Import this file in the file of the module, add it to both js's imports and the module imports.
 	- Remove the route from the app routing: delete the js imports refering to the module and use loadChildren in the route. Paths in loadChildren are relative.
 	- Remove all imports referring to the module in app.module, as they are redundant (both js and angular).
+
+- A few notes on animations...
+	- Create a trigger phrase.
+	- Each trigger phrase can work with a variety of "state", which are "end styles", and you should define.
+	- Define as much "transition" as you need between states.
+	- You can define a style inside a transition's "animate", so the elements adopts that style as it animates. That's specially handy for leave animations, as there's no "void" style.
+	- This thing... 
+		transition('void => *', [style({transform: 'translateX(-100%) scale(2)'}), animate('0.5s ease')]),
+			reads: when I "enter" (void => *, or :enter), apply me the style (translate and scale) and then animate me to the target state (*) in 0.5 seconds, with ease.
+	- This other thing
+		transition('* => void', [style({color:'#fff'}), animate('0.5s ease', style({transform: 'translateX(100%)'}))])
+			reades: When I exit, apply me the style with white color, then animate me to the translateX style in 0.5s.
+	- The trick on pinning animations to items is to combine the trigger with the state, like in [@getoutitem]="present" in the style.
+
+export const HoverItem:AnimationEntryMetadata=trigger('hoveritem', [
+	state('hovered', style({backgroundColor: '#c55'})),
+	transition('hovered <=> *', animate('0.3s ease')),
+]);

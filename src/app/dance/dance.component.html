@@ -14,10 +14,13 @@ This is dance component!!... It is not exported, so you can't use it outside its
 		<div *ngFor="let val of animated_items; let i=index;" 
 			(mouseover)="val.hover=true;" 
 			(mouseout)="val.hover=false;"
+			[@getoutitem]="present"
 			[@hoveritem]="val.hover ? 'hovered' : 'unhovered'"
+			[@hoveritemfont]="val.hover ? 'hovered' : 'unhovered'" 
+			class="item"
 		>
-			{{val.hover}} : {{val.content}}
 			<input type="button" value="Remove me" (click)="remove_item(i)" />
+			{{val.content}}
 		</div>
 	</div>
 </div>
