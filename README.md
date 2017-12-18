@@ -30,7 +30,12 @@ master-plus-v3:
 	- Added a list of elements into the dance components. Animated according to state, depicting possibilities with default css properties and explicit animation states.
 master-plus-v4:
 	- Added another animated element so you can switch between welcome and dance and experience animations.
-	- First forays into nested routing.
+	- First forays into nested routing... Seems to work okay.
+	- Fake service which simulates network latency.
+	- Add authorization, protecting the new nested routing thing.
+
+- TODO: Add guard against invalid ids in the list component (the guitar thing).
+- TODO: Try and get delays to work with promises?
 
 I would do a master-plus-vX with things like injectors and useValue, non class services (dependencies) but I can't for the life of me figure out what kind of problem are these two supposed to solve in such an opinionated framework.
 

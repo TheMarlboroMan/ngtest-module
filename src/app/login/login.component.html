@@ -1,0 +1,29 @@
+<h2>Login</h2>
+
+<p *ngIf="message.length">{{message}}</p>
+
+<p *ngIf="sending">
+	<img src="assets/dancing-banana.gif" style="width: 50px; height: 50px;"/>
+	<br />
+	Sending your data...
+</p>
+
+<form #dataform="ngForm" (ngSubmit)="submit_form()" [hidden]="sending" >
+	<div>
+		<label>
+			User: 
+			<input #userfield="ngModel" type="text" name="user" id="user" [(ngModel)]="data_model.login" required />
+		</label>
+		<p *ngIf="userfield.touched && !userfield.valid">This field cannot be empty</p>
+	</div>
+	<div>
+		<label>
+			Pass:
+			<input #passfield="ngModel" type="password" name="pass" id="pass" [(ngModel)]="data_model.pass" required />
+		</label>
+		<p *ngIf="passfield.touched && !passfield.valid">This field cannot be empty</p>
+	</div>
+	<div>
+		<input type="submit" value="Login" [disabled]="!dataform.valid" />
+	</div>
+</form>

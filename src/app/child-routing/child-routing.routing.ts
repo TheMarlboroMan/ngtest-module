@@ -7,14 +7,19 @@ import {VideoComponent} from './video.component';
 import {ListComponent} from './list.component';
 import {ListItemComponent} from './list-item.component';
 
+import {AuthorizationService} from '../core/authorization.service';
+
 const routes=[
-	{path: '', component: ChildRoutingComponent, children: [
-		{path: '', component: BaseComponent},
-		{path: 'picture', component: PictureComponent},
-		{path: 'video', component: VideoComponent},
-		{path: 'list', component: ListComponent, children: [
-			{path: ':id', component: ListItemComponent}
-		]},
+	{path: '', 
+		component: ChildRoutingComponent, 
+		canActivate: [AuthorizationService],
+		children: [
+			{path: '', component: BaseComponent},
+			{path: 'picture', component: PictureComponent},
+			{path: 'video', component: VideoComponent},
+			{path: 'list', component: ListComponent, children: [
+				{path: ':id', component: ListItemComponent}
+			]},
 	]}
 ];
 export const ModuleRouting=RouterModule.forChild(routes);

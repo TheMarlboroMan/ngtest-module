@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 //Custom modules
 import {UserDataModule} from './user-data/user-data.module';
 import {DanceModule} from './dance/dance.module';
+import {LoginModule} from './login/login.module';
 import {SharedModule} from './shared/shared.module';
 import {CoreModule} from './core/core.module';
 
@@ -30,6 +31,7 @@ import {AppRouting} from './app.routing';
 		BrowserAnimationsModule,
 		UserDataModule,
 		DanceModule,
+		LoginModule,
 		CoreModule.forRoot(),
 		SharedModule,
 		AppRouting

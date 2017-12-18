@@ -24,7 +24,6 @@ export class GuitarService {
 
 	public	get_guitars():Promise<GuitarModel[]> {
 
-		//Much more terse.
 		return Observable.of(guitars).delay(1000).toPromise();
 	}
 

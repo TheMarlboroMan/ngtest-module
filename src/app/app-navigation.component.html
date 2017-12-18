@@ -6,4 +6,6 @@
 	<a routerLinkActive="nav_active" routerLink="dance">Dance</a>
 	<a routerLinkActive="nav_active" routerLink="child-routing">Child routing</a>
 	<a routerLinkActive="nav_active" routerLink="about">About</a>
+	<a *ngIf="!is_user_authorized()" routerLinkActive="nav_active" routerLink="login">Login</a>
+	<a *ngIf="is_user_authorized()" routerLinkActive="nav_active" routerLink="login">Logout</a>
 </nav>
