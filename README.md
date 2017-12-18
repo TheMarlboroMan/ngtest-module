@@ -33,9 +33,15 @@ master-plus-v4:
 	- First forays into nested routing... Seems to work okay.
 	- Fake service which simulates network latency.
 	- Add authorization, protecting the new nested routing thing.
+	- A bit of terrible localstorage for the login thing.
+	- Navigate to logout ONLY if you are logged in.
 
-- TODO: Add guard against invalid ids in the list component (the guitar thing).
+- TODO: Canload may load only the private part if the user is really logged in and tries to navigate.
+- TODO: What about canActivateChildren?
+- TODO: Learn about resolvers... Later.
 - TODO: Try and get delays to work with promises?
+
+- TODO: clear todos...
 
 I would do a master-plus-vX with things like injectors and useValue, non class services (dependencies) but I can't for the life of me figure out what kind of problem are these two supposed to solve in such an opinionated framework.
 

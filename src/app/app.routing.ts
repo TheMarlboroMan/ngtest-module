@@ -4,6 +4,8 @@ import {Routes, RouterModule} from '@angular/router';
 import {UserDataFullComponent} from './user-data/user-data-full.component';
 import {DanceComponent} from './dance/dance.component';
 import {LoginComponent} from './login/login.component';
+import {LogoutComponent} from './login/logout.component';
+import {LogoutGuardService} from './core/logout-guard.service';
 
 const routes=[
 	{path: '', redirectTo: 'user-data', pathMatch:'full'},
@@ -13,6 +15,7 @@ const routes=[
 	{path: 'child-routing', loadChildren: './child-routing/child-routing.module#ChildRoutingModule'},
 	{path: 'dance', component: DanceComponent},
 	{path: 'login', component: LoginComponent},
+	{path: 'logout', component: LogoutComponent, canActivate: [LogoutGuardService]},
 ];
 
 export const AppRouting=RouterModule.forRoot(routes);

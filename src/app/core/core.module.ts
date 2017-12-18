@@ -5,8 +5,10 @@ import {CurrentUserService} from './current-user.service';
 import {TimeAccessService} from './time-access.service';
 import {VisitCounterService} from './visit-counter.service';
 import {UselessService} from './useless.service';
-import {AuthorizationService} from './authorization.service';
+import {AuthorizationGuardService} from './authorization-guard.service';
 import {LoginService} from './login.service';
+import {StorageService} from './storage.service';
+import {LogoutGuardService} from './logout-guard.service';
 
 @NgModule({
 	providers: [CurrentUserService]
@@ -20,8 +22,10 @@ public static	forRoot():ModuleWithProviders {
 				TimeAccessService, 
 				UselessService, 
 				VisitCounterService,
-				AuthorizationService,
-				LoginService]
+				AuthorizationGuardService,
+				LoginService, 
+				StorageService,
+				LogoutGuardService]
 		};
 	}
 

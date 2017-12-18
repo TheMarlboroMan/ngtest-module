@@ -7,14 +7,15 @@ import {VideoComponent} from './video.component';
 import {ListComponent} from './list.component';
 import {ListItemComponent} from './list-item.component';
 
-import {AuthorizationService} from '../core/authorization.service';
+import {AuthorizationGuardService} from '../core/authorization-guard.service';
 
 const routes=[
 	{path: '', 
 		component: ChildRoutingComponent, 
-		canActivate: [AuthorizationService],
+		canActivate: [AuthorizationGuardService],
 		children: [
-			{path: '', component: BaseComponent},
+			{path: '', redirectTo: 'base', pathMatch:'full'},
+			{path: 'base', component: BaseComponent},
 			{path: 'picture', component: PictureComponent},
 			{path: 'video', component: VideoComponent},
 			{path: 'list', component: ListComponent, children: [

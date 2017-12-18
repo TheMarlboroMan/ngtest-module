@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, ParamMap} from '@angular/router';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
 import {GuitarService} from './guitar.service';
@@ -14,8 +14,8 @@ export class ListItemComponent implements OnInit {
 
 	public	constructor(
 		private actroute:ActivatedRoute,
-		private	gs:GuitarService
-	){
+		private	gs:GuitarService,
+		private r:Router){
 
 	}
 
@@ -29,8 +29,14 @@ export class ListItemComponent implements OnInit {
 				return this.gs.get_guitar(parseInt(params.get('id'), 10));
 			})
 			.subscribe((data:GuitarModel) => {
-				if(!data) alert("Something failed, did you tamper with the url?");
-				else this.current=data;
+				if(!data) {
+					alert("Something failed, did you tamper with the url?");
+					this.current=null;
+					this.r.navigate(['../'], {relativeTo: this.actroute});
+				}
+				else {
+					this.current=data;
+				}
 			});
 	}
 
