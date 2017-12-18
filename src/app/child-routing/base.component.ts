@@ -9,7 +9,6 @@ export class BaseComponent implements OnInit {
 
 	public	message:string="";
 
-	//TODO: Read the stupid url...
 	public	constructor(
 		private actroute:ActivatedRoute) {
 

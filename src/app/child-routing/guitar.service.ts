@@ -29,8 +29,6 @@ export class GuitarService {
 
 	public	get_guitar(id:number):Promise<GuitarModel> {
 
-		//TODO: How do we guard against invalid ids????
-
 		let prom=Promise.resolve(guitars)
 			.then( (data) => data.filter( (val) => {return val.id==id;}))
 			.then( (data) => {if(data.length) return data[0]; else return null;})

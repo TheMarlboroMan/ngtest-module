@@ -84,7 +84,6 @@ export class LoginComponent implements OnInit {
 
 		console.log("Submitting data");
 
-		//TODO: Send shit to a service, await for a response...
 		this.sending=true;
 
 		this.ls.do_login(this.data_model.login, this.data_model.pass)
